@@ -6,6 +6,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { ArrowDown, Moon, Sun } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
 import myAvatar from "@/assets/images/zubair-avatar-one.webp"
+import myAvatarTwo from "@/assets/images/zubair-avatar-two.webp"
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 
@@ -84,11 +85,11 @@ const Header = () => {
     <header
         className={`fixed top-0 z-50 w-full text-white transition-all duration-500 py-4 max-2xl:px-4  ${
             isScrolled
-                ? "bg-blue-primary shadow-lg"
+                ? "bg-primary dark:bg-dark-primary-dark shadow-lg"
                 : "bg-transparent"
         }   `}
     >
-        <div className="container border rounded-2xl py-1 flex justify-between items-center">
+        <div className="container rounded-2xl py-1 flex justify-between items-center">
         <a
             href="/"
             className="cursor-pointer bg-white p-[0.18rem] rounded-full"
@@ -96,7 +97,7 @@ const Header = () => {
             title="Go to Home"
           >
             <img
-              src={myAvatar}
+              src={theme === "dark" ? myAvatarTwo : myAvatar}
               alt="Zubair Porfolio"
               className="h-fit ~w-[2rem]/[3.75rem] rounded-full"
               loading="lazy"

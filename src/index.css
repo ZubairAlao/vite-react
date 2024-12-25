@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;300;400;500;600;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,19 +11,19 @@
 }
 
 body {
-  @apply bg-primary dark:bg-dark-primary font-playfairFont text-[1rem] font-[400] leading-[36px] md:text-[1.15rem] lg:text-[1.5rem];
+  @apply bg-primary dark:bg-dark-primary text-foreground dark:text-dark-foreground font-inter text-[1rem] font-[400] leading-[1.8rem] md:text-[1.15rem] lg:text-[1.25rem];
 }
 
 .h1 {
-  @apply text-[3rem] font-[900] leading-[56px] md:text-[4.5rem] md:leading-[80px] lg:text-[6.56rem] lg:leading-[105px];
+  @apply font-header text-[3rem] font-[900] leading-[3.5rem] md:text-[4.5rem] md:leading-[4.5rem] lg:text-[6rem] lg:leading-[6.5rem];
 }
 
 .h2 {
-  @apply text-[2.25rem] font-[700] leading-[44px] lg:text-[3.125rem] lg:leading-[64px];
+  @apply font-header text-[2.25rem] font-[700] leading-[2.75rem] md:text-[3rem] md:leading-[3.5rem];
 }
 
 .h3 {
-  @apply text-[1.5rem] font-[400] leading-[30px] tracking-[-0.02em] lg:text-[2rem] lg:leading-[41px];
+  @apply font-header text-[1.5rem] font-[500] leading-[2rem] md:text-[2rem] md:leading-[2.5rem];
 }
 
 a {

@@ -19,12 +19,11 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       backgroundImage: {
-        "hero-background": "url('@/assets/images/homepage-bg.jpg')",
-        "gojo-twisted-fingers-background": "url('@/assets/images/gojo-twisted-fingers.jpg')",
-        "gojo-city-background": "url('@/assets/images/gojo-city.jpg')",
+        "jujustu-city-background": "url('@/assets/images/jujustu-city.jpg')",
       },
       fontFamily: {
-        playfairFont: ["Playfair Display", "serif"],
+        inter: ['Inter', 'sans-serif'], // For body text
+        header: ['Bebas Neue', 'sans-serif'], // For headers
       },
       colors: {
         // Light Mode (Gojo Palette)
