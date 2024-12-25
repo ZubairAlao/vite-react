@@ -20,38 +20,48 @@ export default {
       },
       backgroundImage: {
         "hero-background": "url('@/assets/images/homepage-bg.jpg')",
+        "gojo-twisted-fingers-background": "url('@/assets/images/gojo-twisted-fingers.jpg')",
+        "gojo-city-background": "url('@/assets/images/gojo-city.jpg')",
       },
       fontFamily: {
         playfairFont: ["Playfair Display", "serif"],
       },
       colors: {
+        // Light Mode (Gojo Palette)
         primary: {
-          light: '#6366F1',
-          DEFAULT: '#4F46E5',
-          dark: '#4338CA',
+          DEFAULT: '#0091EA', // Electric blue (Gojo's signature color)
+          light: '#4FC3F7',   // Sky blue (soft glow effect)
         },
         secondary: {
-          light: '#F472B6',
-          DEFAULT: '#D946EF',
-          dark: '#C026D3',
-        },
-        background: {
-          light: '#F9FAFB',
-          dark: '#1F2937',
-        },
-        text: {
-          light: '#111827',
-          dark: '#E5E7EB',
-        },
-        link: {
-          DEFAULT: '#3B82F6',
-          hover: '#2563EB',
+          DEFAULT: '#8E44AD', // Subtle purple for contrast
+          light: '#D6BBFC',   // Lavender
         },
         accent: {
-          success: '#10B981',
-          warning: '#F59E0B',
-          danger: '#EF4444',
+          DEFAULT: '#4CAF50', // Neon green (optional cursed energy)
+          light: '#81C784',   // Lighter green
         },
+        background: '#F0F8FF', // Soft azure (inspired by Gojo’s infinity)
+        foreground: '#1E1E1E', // Dark gray for text
+        card: '#FFFFFF',       // White card background
+        muted: '#9E9E9E',      // Gray for secondary text
+
+        // Dark Mode (Sukuna Palette)
+        'dark-primary': {
+          DEFAULT: '#FF3A3E', // Deep red (Sukuna's energy color)
+          dark: '#BF2025',    // Blood red
+        },
+        'dark-secondary': {
+          DEFAULT: '#7C4DFF', // Cursed purple
+          dark: '#6200EA',    // Deep violet
+        },
+        'dark-accent': {
+          DEFAULT: '#FF9100', // Bright orange for accents
+          dark: '#FF6D00',    // Fiery orange
+        },
+        'dark-background': '#1A1A1A', // Almost black
+        'dark-foreground': '#E0E0E0', // Light gray for text
+        'dark-card': '#252525',       // Dark gray card background
+        'dark-muted': '#757575',      // Muted gray for secondary text
       },
     },
   },

@@ -3,6 +3,5 @@ export const headerLinks = [
     {label: "About", link: "/about"},
     {label: "Projects", link: "/about"},
     {label: "Contact", link: "/contact-us"},
-    {label: "Download CV", link: "/download-cv"},
 
 ]
