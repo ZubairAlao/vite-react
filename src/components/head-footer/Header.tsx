@@ -3,17 +3,38 @@ import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { Link as ScrollLink , Button as ScrollButton, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 import { headerLinks } from "./header-links";
 import { Link as RouterLink } from 'react-router-dom';
-import { ArrowDown, Moon, Sun } from "lucide-react"
+import { ArrowDown, Book, BookAIcon, Moon, Sun } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
 import myAvatar from "@/assets/images/zubair-avatar-one.webp"
 import myAvatarTwo from "@/assets/images/zubair-avatar-two.webp"
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
+import { MenuIcon } from "lucide-react";
+import MobileMenu from "./MobileMenu";
+
+export const CancelIcon = ({ size = 24, color = "black" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
 
 interface HeaderLink {
     label: string;
     link: string;
   }
+
+
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
@@ -83,13 +104,13 @@ const Header = () => {
 
   return (
     <header
-        className={`fixed top-0 z-50 w-full text-white transition-all duration-500 py-4 max-2xl:px-4  ${
+        className={`fixed top-0 z-50 w-full text-dark-foreground transition-all duration-500 py-4 max-lg:px-0 max-2xl:px-4`}
+    >
+        <div className={`container rounded-2xl py-1 flex justify-between items-center ${
             isScrolled
                 ? "bg-primary dark:bg-dark-primary-dark shadow-lg"
                 : "bg-transparent"
-        }   `}
-    >
-        <div className="container rounded-2xl py-1 flex justify-between items-center">
+        }`}>
         <a
             href="/"
             className="cursor-pointer bg-white p-[0.18rem] rounded-full"
@@ -97,55 +118,89 @@ const Header = () => {
             title="Go to Home"
           >
             <img
-              src={theme === "dark" ? myAvatarTwo : myAvatar}
+              src={myAvatarTwo}
               alt="Zubair Porfolio"
               className="h-fit ~w-[2rem]/[3.75rem] rounded-full"
               loading="lazy"
             />
           </a>
 
-            <nav className="~text-base/lg">
-                <ul className="flex justify-center items-center ~gap-4/6">
-                    {headerLinks.map((link) => (
-                        <li
-                            key={link.label}
-                        >
-                            <ScrollLink className="cursor-pointer" to={link.link}>{link.label}</ScrollLink>
-                        </li>
-                    ))}
-                    <li>
-                      <Button className="rounded-xl">
-                        <span>Download CV</span>
-                        <ArrowDown />
-                      </Button>
-                    </li>
-                    <li>
-                    <Button
-                      size="icon"
-                      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            <div className="flex justify-center items-center ~gap-2/4">
+              <nav className="~text-base/lg">
+                  <ul className="flex items-center ~gap-4/6 max-lg:hidden">
+                      {headerLinks.map((link) => (
+                          <li
+                              key={link.label}
+                          >
+                            <ScrollLink 
+                              className="cursor-pointer" 
+                              to={link.link}
+                              activeClass="active" 
+                              spy={true} 
+                              smooth={true} 
+                              offset={0} 
+                              duration={500} 
+                            >
+                              {link.label}
+                            </ScrollLink>
+                          </li>
+                      ))}
+                  </ul>
+              </nav>
+
+              <MobileMenu menuRef={menuRef} toggle={toggle} />
+
+              <div className="flex justify-center items-center ~gap-2/4">
+              <a href="/zubair_alao_cv.docx" download="zubair_alao_cv.docx">
+                <Button className="rounded-xl">
+                  <div className="flex items-center gap-2"><span className="max-lg:hidden">Download</span><Book className="lg:hidden" />CV</div>
+                  <ArrowDown />
+                </Button>
+              </a>
+                <Button
+                  size="icon"
+                  onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                >
+                  {theme === "dark" ? (
+                    <motion.div
+                      initial={{ rotate: 90, scale: 0 }}
+                      animate={{ rotate: 0, scale: 1 }}
+                      transition={{ duration: 0.2 }}
                     >
-                      {theme === "dark" ? (
-                        <motion.div
-                          initial={{ rotate: 90, scale: 0 }}
-                          animate={{ rotate: 0, scale: 1 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <Sun className="h-[1.2rem] w-[1.2rem]" />
-                        </motion.div>
-                      ) : (
-                        <motion.div
-                          initial={{ rotate: -90, scale: 0 }}
-                          animate={{ rotate: 0, scale: 1 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <Moon className="h-[1.2rem] w-[1.2rem]" />
-                        </motion.div>
-                      )}
-                      <span className="sr-only">Toggle theme</span>
-                    </Button>
-                    </li>
-                </ul>
-            </nav>
+                      <Sun className="h-[1.2rem] w-[1.2rem]" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      initial={{ rotate: -90, scale: 0 }}
+                      animate={{ rotate: 0, scale: 1 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Moon className="h-[1.2rem] w-[1.2rem]" />
+                    </motion.div>
+                  )}
+                  <span className="sr-only">Toggle theme</span>
+                </Button>
+
+                {/* toggle button */}
+                  {toggle ? (
+                  <button
+                    aria-label="Toggle navigation menu"
+                    className="relative z-30 cursor-pointer object-contain"
+                    onClick={handleToggleButton}
+                  >
+                    <CancelIcon size={32} color="white" />
+                  </button>
+                ) : (
+                  <button
+                    aria-label="Toggle navigation menu"
+                    className="relative z-30 cursor-pointer object-contain text-white lg:hidden"
+                    onClick={handleToggleButton}
+                  >
+                    <MenuIcon className="h-fit w-[32px]" />
+                  </button>
+                )}
+              </div>
+            </div>
         </div>
     </header>
   )

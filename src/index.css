@@ -15,7 +15,7 @@ body {
 }
 
 .h1 {
-  @apply font-header text-[3rem] font-[900] leading-[3.5rem] md:text-[4.5rem] md:leading-[4.5rem] lg:text-[6rem] lg:leading-[6.5rem];
+  @apply font-header text-[3rem] font-[900] leading-[3.5rem] md:text-[4.5rem] md:leading-[4.5rem] lg:text-[5.8rem] lg:leading-[6.5rem];
 }
 
 .h2 {
