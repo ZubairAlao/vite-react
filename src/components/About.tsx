@@ -3,6 +3,7 @@ import { ArrowDownRight } from 'lucide-react';
 import { Button } from './ui/button';
 import Skills from './Skills';
 import { Element } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 
 
 const About = () => {
@@ -22,7 +23,16 @@ const About = () => {
                 </div>
             </div>
                 <p>I am a web developer with expertise in both front-end and insatiable curiosity about back-end technologies. Proficient in HTML, CSS, JavaScript, React, Next.js, and UI/UX design, converting Figma designs into responsive React applications. I approach every project with determination and a focus on delivering effective, high-quality solutions.</p>
-                <Button children="Hire Me" className='~mt-6/8 rounded-2xl' />
+                <ScrollLink 
+                              className="cursor-pointer" 
+                              to="contact-us"
+                              spy={true} 
+                              smooth={true} 
+                              offset={0} 
+                              duration={500} 
+                            >
+                                <Button children="Hire Me" className='~mt-6/8 rounded-2xl px-8 py-2' />
+                            </ScrollLink>
             </div>
         </div>
 

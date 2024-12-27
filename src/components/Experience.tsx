@@ -40,8 +40,8 @@ const Experience = () => {
                 {job.startDate}
               </p>
 
-              <div className="w-5 h-5 rounded-full bg-white relative">
-                <div className="relative min-h-40 bg-white w-[2px] mt-8 top-0 left-1/2 transform -translate-x-1/2 z-20"></div>
+              <div className="min-w-5 min-h-5 rounded-full bg-foreground dark:bg-dark-foreground relative">
+                <div className="absolute min-h-40 bg-foreground dark:bg-dark-foreground w-[2px] mt-8 top-0 left-1/2 transform -translate-x-1/2 z-20"></div>
               </div>
 
               <div className="space-y-4">
