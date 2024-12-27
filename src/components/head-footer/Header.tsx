@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import { Link as ScrollLink , Button as ScrollButton, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 import { headerLinks } from "./header-links";
-import { Link as RouterLink } from 'react-router-dom';
-import { ArrowDown, Book, BookAIcon, Moon, Sun } from "lucide-react"
+// import { Link as RouterLink } from 'react-router-dom';
+import { ArrowDown, Book, Moon, Sun } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
-import myAvatar from "@/assets/images/zubair-avatar-one.webp"
 import myAvatarTwo from "@/assets/images/zubair-avatar-two.webp"
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
@@ -28,12 +27,6 @@ export const CancelIcon = ({ size = 24, color = "black" }) => (
     <line x1="6" y1="6" x2="18" y2="18" />
   </svg>
 );
-
-interface HeaderLink {
-    label: string;
-    link: string;
-  }
-
 
 
 const Header = () => {
@@ -104,9 +97,9 @@ const Header = () => {
 
   return (
     <header
-        className={`fixed top-0 z-50 w-full text-dark-foreground transition-all duration-500 py-4 max-lg:px-0 max-2xl:px-4`}
+        className={`fixed top-0 z-50 w-full text-dark-foreground transition-all duration-500 md:py-4 md:px-4`}
     >
-        <div className={`container rounded-2xl py-1 flex justify-between items-center ${
+        <div className={`container md:rounded-2xl py-1.5 flex justify-between items-center ${
             isScrolled
                 ? "bg-primary dark:bg-dark-primary-dark shadow-lg"
                 : "bg-transparent"
@@ -148,7 +141,7 @@ const Header = () => {
                   </ul>
               </nav>
 
-              <MobileMenu menuRef={menuRef} toggle={toggle} />
+              <MobileMenu menuRef={menuRef} toggle={toggle} handleToggleButton={handleToggleButton} />
 
               <div className="flex justify-center items-center ~gap-2/4">
               <a href="/zubair_alao_cv.docx" download="zubair_alao_cv.docx">

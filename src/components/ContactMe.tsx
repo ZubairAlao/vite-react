@@ -81,7 +81,7 @@ const ContactMe: React.FC = () => {
   };
 
   return (
-    <Element name="contact-us"  className="bg-primary dark:bg-dark-primary-dark min-h-screen ~py-20/40">
+    <Element name="contact-us"  className="bg-primary dark:bg-dark-primary-dark ~py-20/40">
       <Toaster />
       <div className="container">
         <h2 className="h1 mb-12 text-center">Contact Me</h2>

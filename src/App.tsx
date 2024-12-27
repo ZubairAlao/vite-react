@@ -1,23 +1,40 @@
 import { ThemeProvider } from "@/components/theme-provider"
-import Header from './components/head-footer/Header'
-import LandingPage from "./components/LandingPage"
-import About from "./components/About"
-import MyPortfolio from "./components/MyPortfolio"
-import Experience from "./components/Experience"
-import ContactMe from "./components/ContactMe"
-import Footer from "./components/head-footer/Footer"
+import { AnimatePresence } from "framer-motion";
+import ErrorPage from "./components/ErrorPage";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from 'react-router-dom'
+import Layout from "./components/Layout";
+import HomePage from "./pages/HomePage"
+import NotFound from "./pages/NotFound";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "*",
+        element: <NotFound />
+      }
+    ]
+  },
+]);
 
 function App() {
-
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-      <Header />
-      <LandingPage />
-      <About />
-      <MyPortfolio />
-      <Experience />
-      <ContactMe />
-      <Footer />
+      <AnimatePresence mode="wait">
+        <RouterProvider router={router} />
+      </AnimatePresence>
     </ThemeProvider>
   )
 }

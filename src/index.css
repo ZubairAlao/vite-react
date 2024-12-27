@@ -37,3 +37,19 @@ img {
 .container {
   @apply mx-auto max-w-7xl px-8 sm:px-4 lg:px-6 xl:px-10;
 }
+
+/* Active state with ::after pseudo-element */
+a.active {
+  font-weight: bold;
+  width: 100%;
+  position: relative;
+}
+
+a.active::after {
+  @apply block absolute bg-white h-[1px] w-full;
+  content: '';
+  bottom: -0.75rem;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
