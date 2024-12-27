@@ -10,23 +10,7 @@ import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import { MenuIcon } from "lucide-react";
 import MobileMenu from "./MobileMenu";
-
-export const CancelIcon = ({ size = 24, color = "black" }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    width={size}
-    height={size}
-    fill="none"
-    stroke={color}
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <line x1="18" y1="6" x2="6" y2="18" />
-    <line x1="6" y1="6" x2="18" y2="18" />
-  </svg>
-);
+import { IoClose } from "react-icons/io5";
 
 
 const Header = () => {
@@ -178,15 +162,15 @@ const Header = () => {
                   {toggle ? (
                   <button
                     aria-label="Toggle navigation menu"
-                    className="relative z-30 cursor-pointer object-contain"
+                    className="relative z-30 cursor-pointer object-contain text-foreground dark:text-dark-foreground"
                     onClick={handleToggleButton}
                   >
-                    <CancelIcon size={32} color="white" />
+                    <IoClose size={32} className="" />
                   </button>
                 ) : (
                   <button
                     aria-label="Toggle navigation menu"
-                    className="relative z-30 cursor-pointer object-contain text-white lg:hidden"
+                    className="relative z-30 cursor-pointer object-contain text-foreground dark:text-dark-foreground lg:hidden"
                     onClick={handleToggleButton}
                   >
                     <MenuIcon className="h-fit w-[32px]" />

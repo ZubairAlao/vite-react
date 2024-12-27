@@ -92,7 +92,7 @@ const ContactMe: React.FC = () => {
             value={name}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
             placeholder="Your Name"
-            className="p-3 border rounded-md"
+            className="p-3 border rounded-md border-black dark:border-white focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary"
             autoComplete='name'
           />
           <Input
@@ -100,14 +100,14 @@ const ContactMe: React.FC = () => {
             value={email}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             placeholder="Your Email"
-            className="p-3 border rounded-md"
+            className="p-3 border rounded-md border-black dark:border-white focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary"
             autoComplete='email'
           />
           <Textarea
             value={message}
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
             placeholder="Your Message"
-            className="p-3 border rounded-md h-40 resize-none"
+            className="p-3 border rounded-md border-black dark:border-white focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary h-40 resize-none"
           />
           <Button type="submit" disabled={isLoading} className="mt-4">
             {isLoading ? 'Sending...' : 'Send Message'}

@@ -31,7 +31,7 @@ const Skills = () => {
             <div className="~text-[2.5rem]/[6rem]">
               {skill.icon}
             </div>
-            <p className="~text-sm/base text-wrap">{skill.name}</p>
+            <p className="~text-sm/base text-wrap text-center">{skill.name}</p>
           </div>
         ))}
       </div>
