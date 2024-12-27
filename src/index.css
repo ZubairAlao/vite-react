@@ -46,7 +46,7 @@ a.active {
 }
 
 a.active::after {
-  @apply block absolute bg-white h-[1px] w-full;
+  @apply block absolute bg-foreground dark:bg-dark-foreground h-[1px] w-full;
   content: '';
   bottom: -0.75rem;
   left: 0;
