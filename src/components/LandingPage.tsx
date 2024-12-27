@@ -1,5 +1,4 @@
 import SakunaImg from "@/assets/images/sakuna.png"
-import SakunaTwoImg from "@/assets/images/sakuna-two.png"
 import GojoImg from "@/assets/images/satoru-gojo.png"
 import { useTheme } from "./theme-provider";
 import HomepageSocialIcons from "./HomepageSocialIcons";
