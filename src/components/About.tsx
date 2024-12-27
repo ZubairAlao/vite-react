@@ -1,6 +1,4 @@
-import LightaboutImg from '@/assets/images/about.jpg'
-import DarkaboutImg from '@/assets/images/about-dark.jpg'
-import { useTheme } from "./theme-provider";
+import AboutImg from '@/assets/images/about.jpg'
 import { ArrowDownRight } from 'lucide-react';
 import { Button } from './ui/button';
 import Skills from './Skills';
@@ -8,12 +6,11 @@ import { Element } from 'react-scroll';
 
 
 const About = () => {
-    const { theme } = useTheme();
   return (
     <Element name="about" className='bg-primary-light dark:bg-dark-primary min-h-screen flex flex-col justify-center items-center ~gap-10/32 ~py-20/40'>
         <div className='container md:flex justify-center items-start ~gap-6/12'>
             <div className='w-full max-w-[20rem] h-fit rounded-full  md:w-1/2 overflow-hidden'>
-                <img src={theme === "dark" ? DarkaboutImg : LightaboutImg} className='hover:brightness-95 w-full h-fit cursor-pointer' alt="computer" />
+                <img src={AboutImg} className='hover:brightness-95 w-full h-fit cursor-pointer' alt="computer" loading='lazy' />
             </div>
 
             <div className='w-full md:w-1/2'>

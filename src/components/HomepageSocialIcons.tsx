@@ -31,7 +31,12 @@ const HomepageSocialIcons = () => {
   ];
 
   return (
-    <div className="flex flex-col fixed right-2 bottom-16 z-20 bg-opacity-60 items-center ~gap-2/4 p-3 border border-accent dark:border-dark-accent rounded-3xl">
+    <div 
+      className="flex flex-col fixed right-2 translate-y-1/2 bottom-1/2 z-20 
+      bg-opacity-40 dark:bg-opacity-40 bg-dark-foreground dark:bg-foreground 
+      items-center ~gap-2/4 p-3 border 
+      border-accent dark:border-dark-accent rounded-3xl"
+    >
       {socialLinks.map((link) => (
           <a
             key={link.label}
