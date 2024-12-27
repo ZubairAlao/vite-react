@@ -22,7 +22,7 @@ const LandingPage = () => {
             <img
                 src={theme === "dark" ? SakunaImg : GojoImg}
                 alt="Jujustu Kaisen"
-                className={`${theme === "dark" ? "transform scale-x-[-1]" : "~max-w-[100rem]/[200rem]"} absolute lg:top-0 max-lg:bottom-0 ~-right-20/80 ~max-w-[100rem]/[200rem]`}
+                className={`${theme === "dark" ? "transform scale-x-[-1]" : "~max-w-[100rem]/[200rem]"} absolute bottom-0 ~-right-20/80 ~max-w-[100rem]/[200rem]`}
                 loading="lazy"
               />
           </div>
