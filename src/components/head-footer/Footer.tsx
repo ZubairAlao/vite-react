@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-6 relative">
       <div className="container mx-auto text-center">
-        <p className="mb-4">&copy; {currentYear} Zubair_Coder. All rights reserved.</p>
+        <p>&copy; {currentYear} Zubair_Coder. All rights reserved.</p>
         
         <ScrollLink
           to="home"
