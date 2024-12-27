@@ -97,9 +97,9 @@ const Header = () => {
 
   return (
     <header
-        className={`fixed top-0 z-50 w-full text-dark-foreground transition-all duration-500 md:py-4 md:px-4`}
+        className={`fixed top-0 z-50 w-full text-dark-foreground transition-all duration-500 lg:py-4 lg:px-4`}
     >
-        <div className={`container md:rounded-2xl py-1.5 flex justify-between items-center ${
+        <div className={`container lg:rounded-2xl py-4 flex justify-between items-center ${
             isScrolled
                 ? "bg-primary dark:bg-dark-primary-dark shadow-lg"
                 : "bg-transparent"
