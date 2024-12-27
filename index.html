@@ -4,18 +4,46 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo192.png" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Alao Zubair's portfolio showcasing web development projects, skills, and achievements. Built with cutting-edge technologies." />
+    <meta name="keywords" content="Alao Zubair, Portfolio, Web Development, JavaScript, React, Next.js, Frontend Developer" />
+    <meta name="author" content="Zubair Alao" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:title" content="Alao Zubair - Portfolio" />
+    <meta property="og:description" content="Explore Alao Zubair's portfolio with dynamic web development projects and innovative designs." />
+    <meta property="og:image" content="/portfolio-preview.png" />
+    <meta property="og:url" content="https://yourportfolio.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alao Zubair - Portfolio" />
+    <meta name="twitter:description" content="Explore Alao Zubair's portfolio with dynamic web development projects and innovative designs." />
+    <meta name="twitter:image" content="/portfolio-preview.png" />
+    <meta name="twitter:creator" content="@yourtwitterhandle" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-  let emojis = ['Alao Portfolio', 'Portfolio 🧑‍💻', 'Portfolio 🔥', 'Alao 🚀', 'Megami', ' Portfolio 😉', ' Portfolio 😎'];
-  let i = 0;
 
-  setInterval(() => {
-    document.title = `Zubair ${emojis[i]}`;
-    i = (i + 1) % emojis.length;
-  }, 3000);
-</script>
+    <script>
+      let emojis = ['Alao Portfolio', 'Portfolio 🧑‍💻', 'Portfolio 🔥', 'Alao 🚀', 'Megami', ' Portfolio 😉', ' Portfolio 😎'];
+      let i = 0;
+
+      setInterval(() => {
+        document.title = `Zubair ${emojis[i]}`;
+        i = (i + 1) % emojis.length;
+      }, 3000);
+    </script>
   </body>
 </html>
