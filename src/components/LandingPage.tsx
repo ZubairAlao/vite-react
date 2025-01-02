@@ -49,7 +49,7 @@ const LandingPage = () => {
             <motion.img
               src={theme === "dark" ? SakunaImg : GojoImg}
               alt="Jujutsu Kaisen"
-              className={`absolute transition-all duration-500 ease-out max-md:right-0 -bottom-2 ${theme === "dark" ? "right-0 max-md:max-w-[20rem] lg:max-w-[44rem] max-w-[32rem] scale-x-[-1]" : "~-right-32/36 max-md:max-w-[32rem] max-w-[52rem]"}`}
+              className={`absolute transition-all duration-500 ease-out max-md:right-0 -bottom-3 ${theme === "dark" ? "right-0 max-md:max-w-[20rem] lg:max-w-[44rem] max-w-[32rem] scale-x-[-1]" : "~-right-32/36 max-md:max-w-[32rem] max-w-[52rem]"}`}
               loading="lazy"
               initial={{ opacity: 0, scale: 0.8, y: 100 }}
               animate={{
@@ -59,11 +59,13 @@ const LandingPage = () => {
                 rotate: [0, 2, 0], // Slight rotation
               }}
               transition={{
-                duration: 1.2, // Smooth animation
-                delay: 0.6, // Delay before animation starts
-                repeat: Infinity, // Loop the animation
-                ease: "easeInOut", // Smooth easing for the movement
-                times: [0, 0.5, 1], // Smooth movement timing
+                rotate: {
+                  duration: 2.5, // Smooth rotation animation
+                  delay: 0.6, // Delay before rotation starts
+                  repeat: Infinity, // Loop the rotation
+                  ease: "easeInOut", // Smooth easing for the rotation
+                  times: [0, 0.5, 1], // Smooth rotation timing
+                },
               }}
             />
           </div>
