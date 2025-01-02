@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import weatherLeakImg from "@/assets/images/projects/WeatherLeak.png";
 import CampusHelpDeskImg from "@/assets/images/projects/campus-helpdesk.jpg";
 import MovieMazeImg from "@/assets/images/projects/MovieMaze.png";
@@ -50,21 +51,38 @@ const MyPortfolio = () => {
   ];
 
   return (
-    <Element name="portfolio"  className="bg-primary dark:bg-dark-primary-dark min-h-screen ~py-20/40">
+    <Element name="portfolio" className="bg-primary dark:bg-dark-primary-dark min-h-screen ~py-20/40">
       <div className="container mx-auto px-5">
         <h1 className="h1 text-center mb-12">My Portfolio</h1>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
               className="group relative overflow-hidden rounded-lg shadow-lg text-sm"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.2, // Staggering effect for each project
+                ease: "easeOut",
+              }}
             >
-              <img
+              <motion.img
                 src={project.image}
                 alt={project.name}
                 className="h-56 w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
               />
-              <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 space-y-2">
+              <motion.div
+                className="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 space-y-2"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
                 <h2 className="text-xl font-bold">{project.name}</h2>
                 <p className="text-white px-4 text-center">{project.description}</p>
                 <div className="flex flex-wrap justify-center items-center gap-1 text-gray-300">
@@ -72,7 +90,7 @@ const MyPortfolio = () => {
                     <p key={i}>• {tech}</p>
                   ))}
                 </div>
-                <div className="flex gap-4 text-gray-300">
+                <div className="flex gap-4 text-white">
                   <a
                     href={project.demo}
                     target="_blank"
@@ -90,8 +108,8 @@ const MyPortfolio = () => {
                     GitHub
                   </a>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>

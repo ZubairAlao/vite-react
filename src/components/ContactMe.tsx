@@ -6,8 +6,7 @@ import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Element } from 'react-scroll';
-
-
+import { motion } from 'framer-motion';  // Import framer-motion
 
 const ContactMe: React.FC = () => {
   const [name, setName] = useState<string>('');
@@ -52,8 +51,6 @@ const ContactMe: React.FC = () => {
         description: 'Message sent successfully!',
         variant: 'default',
       });
-      
-      
 
       // Clear form fields
       setName('');
@@ -81,19 +78,32 @@ const ContactMe: React.FC = () => {
   };
 
   return (
-    <Element name="contact-us"  className="bg-primary dark:bg-dark-primary-dark ~py-20/40">
+    <Element name="contact-us" className="bg-primary dark:bg-dark-primary-dark ~py-20/40">
       <Toaster />
       <div className="container">
-        <h2 className="h1 mb-12 text-center">Contact Me</h2>
+        <motion.h2
+          className="h1 mb-12 text-center"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Contact Me
+        </motion.h2>
 
-        <form onSubmit={handleSubmit} className="w-full mx-auto max-w-lg flex flex-col gap-4">
+        <motion.form
+          onSubmit={handleSubmit}
+          className="w-full mx-auto max-w-lg flex flex-col gap-4"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <Input
             type="text"
             value={name}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
             placeholder="Your Name"
             className="p-3 border rounded-md border-black dark:border-white focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary"
-            autoComplete='name'
+            autoComplete="name"
           />
           <Input
             type="email"
@@ -101,7 +111,7 @@ const ContactMe: React.FC = () => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             placeholder="Your Email"
             className="p-3 border rounded-md border-black dark:border-white focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary"
-            autoComplete='email'
+            autoComplete="email"
           />
           <Textarea
             value={message}
@@ -112,7 +122,7 @@ const ContactMe: React.FC = () => {
           <Button type="submit" disabled={isLoading} className="mt-4">
             {isLoading ? 'Sending...' : 'Send Message'}
           </Button>
-        </form>
+        </motion.form>
       </div>
     </Element>
   );

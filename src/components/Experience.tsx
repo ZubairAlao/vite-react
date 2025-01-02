@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Element } from "react-scroll";
 
 const Experience = () => {
@@ -25,37 +26,47 @@ const Experience = () => {
   ];
 
   return (
-    <Element name="experience"  className="bg-primary-light dark:bg-dark-primary flex flex-col justify-center items-center ~gap-10/32 ~py-20/40">
+    <Element name="experience" className="bg-primary-light dark:bg-dark-primary flex flex-col justify-center items-center ~gap-10/32 ~py-20/40">
       <div className="container mx-auto px-5">
         <h2 className="h1 text-center mb-12">
           Professional Experience
         </h2>
         <div className="space-y-10 max-w-3xl mx-auto">
           {experience.map((job, index) => (
-            <div
+            <motion.div
               key={index}
               className="flex justify-start items-start gap-6"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.2, // Staggered animation delay
+                ease: "easeOut",
+              }}
             >
               <p className="font-bold leading-[1]">
                 {job.startDate}
               </p>
 
-              {/* circle */}
+              {/* Circle */}
               <div className="min-w-5 min-h-5 rounded-full h-full bg-foreground dark:bg-dark-foreground"></div>
 
               <div className="relative">
                 <div className="absolute h-full bg-foreground dark:bg-dark-foreground w-[2px] mt-8 top-0 -left-9 transform -translate-x-1/2 z-20"></div>
                 <div className="mb-4">
-                    <p className="font-bold mb-2 leading-[1]">{job.company}</p>
-                    <h3 className="">{job.role}</h3>
+                  <p className="font-bold mb-2 leading-[1]">{job.company}</p>
+                  <h3 className="">{job.role}</h3>
                 </div>
                 <ul className="list-disc list-inside space-y-1">
-                    {job.responsibilities.map((responsibility, idx) => (
+                  {job.responsibilities.map((responsibility, idx) => (
                     <li key={idx}>{responsibility}</li>
-                    ))}
+                  ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

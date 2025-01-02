@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { MdEmail } from "react-icons/md";
 import { FaTwitter, FaWhatsapp, FaLinkedin, FaGithubAlt } from "react-icons/fa";
 
@@ -35,21 +36,24 @@ const HomepageSocialIcons = () => {
       className="flex flex-col max-md:flex-row fixed max-md:bottom-4 max-md:right-1/2 max-md:translate-x-1/2 right-2 md:translate-y-1/2 bottom-1/2 z-20 
       bg-opacity-60 dark:bg-opacity-60 bg-dark-foreground dark:bg-foreground 
       items-center ~gap-2/4 p-3 border 
-      border-accent dark:border-dark-accent rounded-3xl "
+      border-accent dark:border-dark-accent rounded-3xl"
     >
       {socialLinks.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition duration-300"
-          >
-            {link.icon}
-          </a>
-          ))}
+        <motion.a
+          key={link.label}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition duration-300"
+          whileHover={{ scale: 1.2 }} // On hover, scale up
+          whileTap={{ scale: 0.9 }}   // On click, scale down slightly
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          {link.icon}
+        </motion.a>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default HomepageSocialIcons
+export default HomepageSocialIcons;

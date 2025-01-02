@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaPython, FaDatabase } from "react-icons/fa";
 import { SiJavascript, SiNextdotjs, SiTypescript, SiFirebase, SiTailwindcss, SiFlask, SiMongodb } from "react-icons/si";
 
@@ -15,28 +16,37 @@ const skills = [
     { name: "SQL", icon: <FaDatabase color="#f29111" /> },
     { name: "Version Control (Git)", icon: <FaGitAlt color="#f05032" /> },
     { name: "MongoDB", icon: <SiMongodb color="#47a248" /> },
-]
+];
+
 const Skills = () => {
   return (
     <div className="container">
       <h2 className="h1 text-center mb-12">My Skills</h2>
-      <div
-        className="flex justify-center items-center ~gap-4/8 flex-wrap"
-      >
+      <div className="flex justify-center items-center ~gap-4/8 flex-wrap">
         {skills.map((skill, index) => (
-          <div
+          <motion.div
             key={index}
             className="flex justify-center flex-col ~gap-2/4 bg-primary dark:bg-dark-primary-dark hover:bg-accent-light dark:hover:bg-dark-accent-dark rounded-md items-center ~h-[6rem]/[10rem] ~w-[6rem]/[10rem] cursor-pointer"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.1,  // Stagger the animations
+              ease: "easeOut",
+            }}
           >
             <div className="~text-[2.5rem]/[6rem]">
               {skill.icon}
             </div>
             <p className="~text-sm/base text-wrap text-center">{skill.name}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;

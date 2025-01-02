@@ -17,10 +17,10 @@ const ErrorPage: React.FC = () => {
   }
   
   return (
-    <div className="container flex flex-col items-center justify-center min-h-screen bg-black text-white">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
       <h1 className="text-[36px] font-bold text-red-500">Sorry, an unexpected error has occurred.</h1>
       <p className="text-[30px]  font-light mb-8 mt-4">
-        Oops!
+        Oops! {" "}
         {errorMessage}
       </p>
       <Link
