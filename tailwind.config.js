@@ -46,7 +46,7 @@ export default {
           DEFAULT: '#FF9100', // Bright orange for accents
           dark: '#FF6D00',    // Fiery orange
         },
-        'dark-foreground': '#E0E0E0', // Light gray for text
+        'dark-foreground': '#fff', // Light gray for text
       },
     },
   },

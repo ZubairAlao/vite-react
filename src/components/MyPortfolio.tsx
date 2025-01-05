@@ -66,7 +66,7 @@ const MyPortfolio = () => {
               }}
               transition={{
                 duration: 0.8,
-                delay: index * 0.2, // Staggering effect for each project
+                delay: index * 0.2,
                 ease: "easeOut",
               }}
             >
@@ -78,10 +78,7 @@ const MyPortfolio = () => {
                 transition={{ duration: 0.3 }}
               />
               <motion.div
-                className="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 space-y-2"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
+                className="absolute left-0 h-full cursor-pointer bg-black bg-opacity-70 flex flex-col justify-center items-center -top-full opacity-50 group-hover:opacity-100 group-hover:top-0 transition-all duration-300 space-y-2"
               >
                 <h2 className="text-xl font-bold">{project.name}</h2>
                 <p className="text-white px-4 text-center">{project.description}</p>
