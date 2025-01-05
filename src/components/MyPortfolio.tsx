@@ -51,7 +51,7 @@ const MyPortfolio = () => {
   ];
 
   return (
-    <Element name="portfolio" className="bg-primary dark:bg-dark-primary-dark min-h-screen ~py-20/40">
+    <Element name="portfolio" className="bg-primary dark:bg-dark-primary-dark ~py-20/40">
       <div className="container mx-auto px-5">
         <h1 className="h1 text-center mb-12">My Portfolio</h1>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

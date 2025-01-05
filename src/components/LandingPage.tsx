@@ -11,7 +11,7 @@ const LandingPage = () => {
   return (
     <Element name="home" className="bg-jujustu-city-background bg-center bg-cover w-full">
       <div className="bg-opacity-95 max-md:bg-gradient-to-b bg-gradient-to-r from-primary to-transparent dark:from-dark-primary dark:bg-opacity-90 overflow-hidden relative">
-        <div className="container max-md:min-h-screen lg:min-h-screen lg:py-0 flex justify-start items-center">
+        <div className="container max-md:min-h-screen md:~py-28/60 xl:min-h-screen xl:py-0 flex justify-start items-center">
           <div className="max-w-[40rem] md:w-[45%] relative z-30">
             {/* Animate Text */}
             <motion.p 
