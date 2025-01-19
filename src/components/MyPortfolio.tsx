@@ -4,10 +4,19 @@ import CampusHelpDeskImg from "@/assets/images/projects/campus-helpdesk.jpg";
 import MovieMazeImg from "@/assets/images/projects/MovieMaze.png";
 import MillencoImg from "@/assets/images/projects/millenco.jpg";
 import NaijaDeliImg from "@/assets/images/projects/naijadeli.jpg";
+import EventifyImg from "@/assets/images/projects/eventify.jpg";
 import { Element } from "react-scroll";
 
 const MyPortfolio = () => {
   const projects = [
+    {
+      name: "Eventify",
+      description: "A dashboard chart application featuring chart, dark-mode and event history.",
+      technologies: ["React", "TailwindCSS", "TypeScript", "ShadCN"],
+      image: EventifyImg,
+      demo: "https://alpha-eventify.vercel.app/",
+      github: "https://github.com/ZubairAlao/alphatwelves_frontend_assessment"
+    },
     {
       name: "Naija Deli",
       description: "A project on World of Nigerian Popular Tribal Dishes.",
